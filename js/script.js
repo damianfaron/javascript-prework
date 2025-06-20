@@ -1,42 +1,44 @@
 let computerMove;
 let playerMove;
 let randomNumber;
-let playerInput;
-let argMoveId;
+// let playerInput;
+// let argMoveId;
 let argPlayerMove;
 let argComputerMove;
+let buttonRock, buttonPaper, buttonScissors;
 
-// computer
-computerMove = randomNumber;
-randomNumber = Math.floor(Math.random() * 3 + 1);
+// add elements to JS
+buttonRock = document.getElementById('button-rock');
+buttonPaper = document.getElementById('button-paper');
+buttonScissors = document.getElementById('button-scissors');
 
-// player
-playerMove = playerInput;
-playerInput = prompt('Wybier swój ruch! 1: Kamineń, 2: Papier, 3: nożyce');
+// function game
+function buttonClicked(argButtonName) {
+	clearMessages();
+	// console.log(argButtonName + ' kliknięto mnie');
 
-// console.log('Wylosowana liczba to ' + randomNumber);
-// if (randomNumber == '1') {
-// 	computerMove = 'Kamień';
-// } else if (randomNumber == '2') {
-// 	computerMove = 'Papier';
-// } else if (randomNumber == '3') {
-// 	computerMove = 'Nożyce';
-// }
+	// computer move
+	computerMove = randomNumber;
+	randomNumber = Math.floor(Math.random() * 3 + 1);
+	computerMove = getMoveName(randomNumber);
 
-// console.log('Wpisana odpowiedź to: ' + playerInput);
-// if (playerInput == '1') {
-// 	playerMove = 'Kamień';
-// } else if ((playerInput = '2')) {
-// 	playerMove = 'Papier';
-// } else if ((playerInput = '3')) {
-// 	playerMove = 'Nożyce';
-// }
+	// player move
+	playerMove = argButtonName;
 
-// printMessage(displayResult(1, 2));
+	// print info game:
+	printMessage(
+		'Wybór gracza to: ' + playerMove + ', wybór komputera to ' + computerMove
+	);
+	displayResult(playerMove, computerMove);
+}
 
-playerMove = getMoveName(playerInput);
-computerMove = getMoveName(randomNumber);
-printMessage(
-	'Wybór grasza to: ' + playerMove + ' Wybór komputera to ' + computerMove
-);
-displayResult(playerMove, computerMove);
+// add event for the buttons
+buttonPaper.addEventListener('click', function () {
+	buttonClicked('papier');
+});
+buttonRock.addEventListener('click', function () {
+	buttonClicked('kamień');
+});
+buttonScissors.addEventListener('click', function () {
+	buttonClicked('nożyce');
+});

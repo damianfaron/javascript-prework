@@ -16,7 +16,7 @@ function getMoveName(argMoveId) {
 	} else if (argMoveId == 3) {
 		return 'nożyce';
 	} else {
-		printMessage('Podaj ruch z zakresu 1-3');
+		
 		return 'poza zakresem';
 	}
 }
@@ -27,14 +27,14 @@ function displayResult(argPlayerMove, argComputerMove) {
 		(argPlayerMove == 'kamień' && argComputerMove == 'nożyce') ||
 		(argPlayerMove == 'nożyce' && argComputerMove == 'papier')
 	) {
-		printMessage('Wygrał gracz');
+		printMessage('Wygrałeś');
 	} else if (
 		(argPlayerMove == 'kamień' && argComputerMove == 'papier') ||
 		(argPlayerMove == 'nożyce' && argComputerMove == 'kamień') ||
-		(argPlayerMove == 'paiper' && argComputerMove == 'nożyce')
+		(argPlayerMove == 'papier' && argComputerMove == 'nożyce')
 	) {
-		printMessage('Przegrał gracz');
+		printMessage('Przegrałeś');
 	} else if (argPlayerMove == argComputerMove) {
-		printMessage('remis');
+		printMessage('REMIS !');
 	}
 }
