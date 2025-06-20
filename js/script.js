@@ -6,31 +6,20 @@ let randomNumber;
 let argPlayerMove;
 let argComputerMove;
 let buttonRock, buttonPaper, buttonScissors;
+let playerWins = 0;
+let computerWins = 0;
 
 // add elements to JS
 buttonRock = document.getElementById('button-rock');
 buttonPaper = document.getElementById('button-paper');
 buttonScissors = document.getElementById('button-scissors');
 
+// result
+const playerPoints = document.getElementById('player-wins');
+const computerPoints = document.getElementById('computer-wins');
+const btnClearPoints = document.getElementById('button-clear');
+
 // function game
-function buttonClicked(argButtonName) {
-	clearMessages();
-	// console.log(argButtonName + ' kliknięto mnie');
-
-	// computer move
-	computerMove = randomNumber;
-	randomNumber = Math.floor(Math.random() * 3 + 1);
-	computerMove = getMoveName(randomNumber);
-
-	// player move
-	playerMove = argButtonName;
-
-	// print info game:
-	printMessage(
-		'Wybór gracza to: ' + playerMove + ', wybór komputera to ' + computerMove
-	);
-	displayResult(playerMove, computerMove);
-}
 
 // add event for the buttons
 buttonPaper.addEventListener('click', function () {
@@ -42,3 +31,5 @@ buttonRock.addEventListener('click', function () {
 buttonScissors.addEventListener('click', function () {
 	buttonClicked('nożyce');
 });
+
+btnClearPoints.addEventListener('click', clearResult);

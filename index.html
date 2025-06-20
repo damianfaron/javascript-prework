@@ -11,9 +11,12 @@
     <div class="container">
         <div class="items">
             <h1>Gra</h1>
-            <p>Kamień</p>
-            <p>Papier</p>
-            <p>Nożyce</p>
+            <div class="item-game">
+                <p>Kamień</p>
+                <p>Papier</p>
+                <p>Nożyce</p>
+            </div>
+
         </div>
 
         <div id="buttons">
@@ -25,10 +28,18 @@
 
         <div id="messages"></div>
 
+
+        <div class="result">
+            <p class="player"> <i class="fa-solid fa-user"></i> Gracz: <span id="player-wins">0</span></p>
+            <p class="computer"> <i class="fa-solid fa-robot"></i> Robot: <span id="computer-wins">0</span>
+            </p>
+            <button id="button-clear" class="btn-clear">Wyczyść</button>
+        </div>
+
     </div>
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>
-    <!-- <script src="https://kit.fontawesome.com/16bd03b2c2.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/16bd03b2c2.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
